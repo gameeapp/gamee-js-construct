@@ -1,6 +1,6 @@
 ## Download
 
-[gamee-connector.c3addon](https://github.com/gameeapp/gamee-js-construct3/raw/master/plugin/gamee-connector.c3addon)
+[gamee-connector.c3addon 2.1](https://github.com/gameeapp/gamee-js-construct3/raw/master/plugin/gamee-connector.c3addon)
 
 ## About
 
