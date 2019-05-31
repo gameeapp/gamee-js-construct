@@ -10,6 +10,44 @@ We developped 2 plugins for C3 and C2 to allow Construct users to integrate our 
 
 The Emulator Tool is only published on our website, you can use it from [here](https://emulator.gameeapp.com)
 
+# Table of contents
+
+- [Download](#download)
+- [Setup](#setup)
+  - [Add plugins to the editors](#add-plugins-to-the-editors)
+    - [C2](#c2)
+    - [C3](#c3)
+  - [Use Gamee Emulator](#use-gamee-emulator)
+    - [C2](#c2-1)
+    - [C3](#c3-2)
+- [Usage](#usage)
+- [Properties](#properties)
+- [Conditions](#conditions)
+  - [General](#general)
+  - [Ads](#ads)
+  - [Audio](#audio)
+  - [Erros](#erros)
+  - [Ghost](#ghost)
+  - [Player](#player)
+  - [Purchase](#purchase)
+  - [Replay](#replay)
+  - [Social](#social)
+- [Actions](#actions)
+  - [General](#general-1)
+    - Game Over
+    - Game Save
+    - Update Score
+  - [Ads](#ads-1)
+  - [Log](#log)
+    - Log Event
+  - [Player](#player-1)
+    - Request Player Replay
+    - Request Player Save State
+  - [Purchase](#purchase-1)
+    - Purchase Item
+  - [Social](#social-1)
+    - Share
+
 # Download
 
 You can download the C3 and C2 plugins from here :
@@ -21,6 +59,12 @@ You can download the C3 and C2 plugins from here :
 
 ## Add plugins to the editors
 
+### C2
+
+1. Drag drop the gamee.c2addon to the Construct 2 Application
+2. Click install
+3. Restart the Editor
+
 ### C3
 
 1. Menu -> View -> Addon Manager
@@ -28,24 +72,18 @@ You can download the C3 and C2 plugins from here :
 3. Select the gamee.c3addon and Click Open
 4. Restart the Editor
 
-### C2
-
-1. Drag drop the gamee.c2addon to the Construct 2 Application
-2. Click install
-3. Restart the Editor
-
 ## Use Gamee Emulator
-
-### C3
-
-1. Menu -> Project -> Remote Preview
-2. Copy/Paste the generate link to the Emulator
-3. Click on **Upload Game**
 
 ### C2
 
 1. **Press F5** or Click on **Run Layout**
 2. Copy/Paste the opened url to the Emulator
+3. Click on **Upload Game**
+
+### C3
+
+1. Menu -> Project -> Remote Preview
+2. Copy/Paste the generate link to the Emulator
 3. Click on **Upload Game**
 
 **!IMPORTANT, if you are going to use a non-secure url, for example in C2 the generated url looks like this http://localhost:50000, this must be loaded inside the non-secure (http) version of the emulator**
@@ -198,10 +236,11 @@ You must Enable the property **Log events**
 | Request Player Save State | Will get save state of specific user. Requires the property **Save State** to be Enabled                     |
 
 - Request Player Replay
+
   - Mandatory
     - **User ID** The unique ID of the player you want to get the Replay Data
 
-* Request Player Save State
+- Request Player Save State
   - Mandatory
     - **User ID** The unique ID of the player you want to get the Save State
 
