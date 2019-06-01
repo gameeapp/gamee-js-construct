@@ -6,7 +6,7 @@ GAMEE is a social platform full of HTML5 games. Our main goal is to make the gam
 
 ## Construct Plugins
 
-We developped 2 plugins for C3 and C2 to allow Construct users to integrate our javascript framework without any need to learn any code.  More than that, we developed an Emulator that helps game designers to create and test games within the Gamee's Construct Plugins. The Emulator is not connected to any backend. It should work as a replica of the web platform.
+We developed 2 plugins for C3 and C2 to allow Construct users to integrate our javascript framework without any need to learn any code.  More than that, we developed an Emulator that helps game designers create and test games within the Gamee's Construct Plugins. The Emulator is not connected to any backend. It should work as a replica of the web platform.
 
 The Emulator Tool is only published in our website, you can use it from [here](https://emulator.gameeapp.com)
 
@@ -86,7 +86,7 @@ You can download the C3 and C2 plugins from here :
 2. Copy/Paste the generate link to the Emulator
 3. Click on **Upload Game**
 
-**!IMPORTANT, if you are going to use a non-secure url, for example in C2 the generated url looks like this http://localhost:50000, this must be loaded inside the non-secure (http) version of the emulator**
+**!IMPORTANT : if you are going to use a non-secure url you must load the game in the non-secure url of the emulator as well**
 
 # Usage
 
@@ -181,10 +181,10 @@ You can download the C3 and C2 plugins from here :
 | Name                | Description                                                                                  |
 | ------------------- | -------------------------------------------------------------------------------------------- |
 | Game Initialization | Initial handshake action, game notifies Gamee platform about its existence                   |
-| Game Ready          | Should be called when the game is ready to start. It signals the game that it is able to recevie the start event |
-| Game Over           | Notifies platform player ended the game                                                      |
-| Game Save           | Save data from the game, Requires the property **Save State** to be Enabled                  |
-| Update Score        | Updates the score making it visible for player                                               |
+| Game Ready          | Should be called when the game is ready to start. It signals the Gamee plateform that it is able to recevie the start event |
+| Game Over           | Notifies the platform that the player ended the game                                                      |
+| Game Save           | Saves data from the game. Requires the property **Save State** to be Enabled                  |
+| Update Score        | Updates the score making it visible to the player                                               |
 
 - Game Over
 
@@ -195,15 +195,15 @@ You can download the C3 and C2 plugins from here :
 - Game Save
 
   - Mandatory
-    - **Json to store** The json you want to store in gamee servers, it must be a string
+    - **Json to store** The json you want to store in Gamee servers, it must be a string.
   - Optional
-    - **Share Score** When you save the Game State, you can set the Share Score option to True, It will trigger a screen asking player to share the progress with his actual score. The game must be paused during this process. The game continues when it receives a resume message
+    - **Share Score** When you save the Game State, you can set the Share Score option to True. It will trigger a screen asking the player to share the progress with his actual score. The game must be paused during this process. The game continues when it receives a resume message
 
 - Update Score
   - Mandatory
     - **Score** The Player score
   - Optional
-    - **Ghost Sign** if this is set to true, it will update the Ghost Score, if the game is in Ghost mode
+    - **Ghost Sign** if it is set to true, it will update the Ghost Score, if the game is in Ghost mode
 
 ### Ads
 
@@ -238,11 +238,11 @@ You must Enable the property **Log events**
 - Request Player Replay
 
   - Mandatory
-    - **User ID** The unique ID of the player you want to get the Replay Data
+    - **User ID** The unique ID of the player that you want to get their Replay Data
 
 - Request Player Save State
   - Mandatory
-    - **User ID** The unique ID of the player you want to get the Save State
+    - **User ID** The unique ID of the player that you want to get their  Save State
 
 ### Purchase
 
