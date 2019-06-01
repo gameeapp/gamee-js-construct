@@ -242,7 +242,7 @@ You must Enable the property **Log events**
 
 - Request Player Save State
   - Mandatory
-    - **User ID** The unique ID of the player that you want to get their  Save State
+    - **User ID** The unique ID of the player that you want to get their Save State
 
 ### Purchase
 
@@ -256,23 +256,23 @@ You must Enable the property **Log events**
     - **Item Name** The name of the item
     - **Item Image** The Image of the item (base64Image)
   - Optional
-    - **Developer Payload** Data to store about the purchase
+    - **Developer Payload** Purchase data to be stored
 
 ### Social
 
 | Name           | Description                                                                                        |
 | -------------- | -------------------------------------------------------------------------------------------------- |
-| Share          | Share a post on feed or battles. Requires the property **Share** to be Enabled                     |
+| Share          | Shares a post on Feed or Battles. Requires the property **Share** to be Enabled                     |
 | Request Social | Will get more social data about Gamee players. Requires the property **Social Data** to be Enabled |
 
 - Share
   - Mandatory
     - **Text** The message of the post
-    - **Destination** It will indicate where the post is going to be published, in Feed or Battle
+    - **Destination** It will indicate where the post is going to be published, on Feed or Battle
     - **Picture** Image for the post. The image should be in format 4:3 (640x480px), 1:1 (640x640), or 3:4 (640x852). Maximum size is 150 kB. (base64Image)
   - Optional
     - **Score** The score of the Player
-    - **Init Data** Data saved it to use it on the post for other players
+    - **Init Data** Data that will be shared with other players when they use the post.
 
 ## Expressions
 
@@ -282,7 +282,7 @@ You must Enable the property **Log events**
 | gameeReplayData    | Contains data to use on replay mode or ghost mode                                                                     |
 | gameeReplayVariant | Contains variante to use on replay mode or ghost mode                                                                 |
 | gameeSocialData    | Contains friends and player data (score, avatar, highScore, etc...)                                                   |
-| gameePlatform      | Contains the platform the player is using it could be **android**,**ios**,**web**,**mobile_web**                      |
-| gameeLocale        | Contains the country and the language of the player for example **\"**en_US**\"**,**\"**es_MX**\"**,**\"**pt_BZ**\"** |
-| gameeGameContext   | contains the context of the game it could **normal** or **battle**                                                    |
-| gameePlayerData    | Json received if a player access the game through a post made with the **Share** action                               |
+| gameePlatform      | Contains the platform the player is using, it could be **android**,**ios**,**web**,**mobile_web**                      |
+| gameeLocale        | Contains the country and the language of the player, for example **\"**en_US**\"**,**\"**es_MX**\"**,**\"**pt_BZ**\"** |
+| gameeGameContext   | contains the context of the game, it could be **normal** or **battle**                                                    |
+| gameePlayerData    | Received Json when a player accesses the game through a post made with the **Share** action                               |
