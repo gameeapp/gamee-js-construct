@@ -6,7 +6,7 @@ GAMEE is a social platform full of HTML5 games. Our main goal is to make the gam
 
 ## Construct Plugins
 
-We developed 2 plugins for C3 and C2 to allow Construct users to integrate our javascript framework without any need to learn any code.  More than that, we developed an Emulator that helps game designers create and test games within the Gamee's Construct Plugins. The Emulator is not connected to any backend. It should work as a replica of the web platform.
+We developed 2 plugins for C3 and C2 to allow Construct users to integrate our javascript framework without any need to learn any code. More than that, we developed an Emulator that helps game designers create and test games within the Gamee's Construct Plugins. The Emulator is not connected to any backend. It should work as a replica of the web platform.
 
 The Emulator Tool is only published in our website, you can use it from [here](https://emulator.gameeapp.com)
 
@@ -93,7 +93,7 @@ You can download the C3 and C2 plugins from here :
 ## Properties
 
 | Name         | Description                                                                |
-| ------------ | ---------------------------------------------------------------------------|
+| ------------ | -------------------------------------------------------------------------- |
 | Coins        | Enable in-game-purchase using Gamee Coins                                  |
 | Ghost mode   | Enable the Ghost mode where you see other players' movements when you play |
 | Log events   | Enable events logging                                                      |
@@ -117,13 +117,13 @@ You can download the C3 and C2 plugins from here :
 
 ### Ads
 
-| Name                              | Description                                                               |
-| --------------------------------- | --------------------------------------------------------------------------|
-| On Loaded Rewarded Video          | Will be triggered when a rewarded video is available and loaded           |
-| On Rewarded Video Watched         | Will be triggered when a player finishes watching the rewarded video      |
-| On Rewarded Video Skipped/Ignored | Will be triggered when a player skip or ignore the rewarded video         |
-| On No Rewarded Video available    | Will be triggered when no rewarded videos are available                   |
-    
+| Name                              | Description                                                          |
+| --------------------------------- | -------------------------------------------------------------------- |
+| On Loaded Rewarded Video          | Will be triggered when a rewarded video is available and loaded      |
+| On Rewarded Video Watched         | Will be triggered when a player finishes watching the rewarded video |
+| On Rewarded Video Skipped/Ignored | Will be triggered when a player skip or ignore the rewarded video    |
+| On No Rewarded Video available    | Will be triggered when no rewarded videos are available              |
+
 ### Audio
 
 | Name      | Description                                                                                     |
@@ -133,17 +133,17 @@ You can download the C3 and C2 plugins from here :
 
 ### Erros
 
-| Name     | Description                              |
-| -------- | ---------------------------------------- |
+| Name     | Description                            |
+| -------- | -------------------------------------- |
 | On Error | Will be triggered when an error occurs |
 
 ### Ghost
 
-| Name          | Description                                      |
-| ------------- | -------------------------------------------------|
-| Is Ghost Mode | Will be triggered when the ghost mode is active  |
-| On Ghost Show | Will be triggered when the ghost is shown        |
-| On Ghost Hide | Will be triggered when the ghost is hidden       |
+| Name          | Description                                     |
+| ------------- | ----------------------------------------------- |
+| Is Ghost Mode | Will be triggered when the ghost mode is active |
+| On Ghost Show | Will be triggered when the ghost is shown       |
+| On Ghost Hide | Will be triggered when the ghost is hidden      |
 
 ### Player
 
@@ -163,7 +163,7 @@ You can download the C3 and C2 plugins from here :
 ### Replay
 
 | Name           | Description                                  |
-| -------------- | --------------------------------------------|
+| -------------- | -------------------------------------------- |
 | Is Replay Mode | Will be triggered when Replay mode is active |
 
 ### Social
@@ -178,13 +178,13 @@ You can download the C3 and C2 plugins from here :
 
 ### General
 
-| Name                | Description                                                                                  |
-| ------------------- | -------------------------------------------------------------------------------------------- |
-| Game Initialization | Initial handshake action, game notifies Gamee platform about its existence                   |
+| Name                | Description                                                                                                                 |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| Game Initialization | Initial handshake action, game notifies Gamee platform about its existence                                                  |
 | Game Ready          | Should be called when the game is ready to start. It signals the Gamee plateform that it is able to recevie the start event |
-| Game Over           | Notifies the platform that the player ended the game                                                      |
-| Game Save           | Saves data from the game. Requires the property **Save State** to be Enabled                  |
-| Update Score        | Updates the score making it visible to the player                                               |
+| Game Over           | Notifies the platform that the player ended the game                                                                        |
+| Game Save           | Saves data from the game. Requires the property **Save State** to be Enabled                                                |
+| Update Score        | Updates the score making it visible to the player                                                                           |
 
 - Game Over
 
@@ -262,7 +262,7 @@ You must Enable the property **Log events**
 
 | Name           | Description                                                                                        |
 | -------------- | -------------------------------------------------------------------------------------------------- |
-| Share          | Shares a post on Feed or Battles. Requires the property **Share** to be Enabled                     |
+| Share          | Shares a post on Feed or Battles. Requires the property **Share** to be Enabled                    |
 | Request Social | Will get more social data about Gamee players. Requires the property **Social Data** to be Enabled |
 
 - Share
@@ -276,13 +276,13 @@ You must Enable the property **Log events**
 
 ## Expressions
 
-| Name               | Description                                                                                                           |
-| ------------------ | --------------------------------------------------------------------------------------------------------------------- |
-| gameeSaveState     | Contains data you previously saved                                                                                    |
-| gameeReplayData    | Contains data to use on replay mode or ghost mode                                                                     |
-| gameeReplayVariant | Contains variante to use on replay mode or ghost mode                                                                 |
-| gameeSocialData    | Contains friends and player data (score, avatar, highScore, etc...)                                                   |
+| Name               | Description                                                                                                            |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------- |
+| gameeSaveState     | Contains data you previously saved                                                                                     |
+| gameeReplayData    | Contains data to use on replay mode or ghost mode                                                                      |
+| gameeReplayVariant | Contains variante to use on replay mode or ghost mode                                                                  |
+| gameeSocialData    | Contains friends and player data (score, avatar, highScore, etc...)                                                    |
 | gameePlatform      | Contains the platform the player is using, it could be **android**,**ios**,**web**,**mobile_web**                      |
 | gameeLocale        | Contains the country and the language of the player, for example **\"**en_US**\"**,**\"**es_MX**\"**,**\"**pt_BZ**\"** |
-| gameeGameContext   | contains the context of the game, it could be **normal** or **battle**                                                    |
-| gameePlayerData    | Received Json when a player accesses the game through a post made with the **Share** action                               |
+| gameeGameContext   | contains the context of the game, it could be **normal** or **battle**                                                 |
+| gameePlayerData    | Received Json when a player accesses the game through a post made with the **Share** action                            |
