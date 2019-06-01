@@ -1,14 +1,14 @@
 # Introduction
 
-GAMEE is a social platform full of HTML5 games. Our goal is to make the games playable everywhere. You can play in the mobile apps (Android, iOS), bots (Telegram, Kik, Facebook Messenger) or directly on web.
+GAMEE is a social platform full of HTML5 games. Our main goal is to make the games playable everywhere. You can play on mobile apps (Android, iOS), bots (Telegram, Kik, Facebook Messenger) or directly on the web.
 
 [GAMEE JS](https://github.com/gameeapp/gamee-js) is our Javascript framework for connecting HTML5 game to GAMEE platform.
 
 ## Construct Plugins
 
-We developped 2 plugins for C3 and C2 to allow Construct users to integrate our javascript framework without any need to learn any code more than that we have developed an Emulator that helps game designers to create and test games within the Gamee's Construct Plugins. The Emulator is not connected to any backend. It should work as replica of the web platform.
+We developped 2 plugins for C3 and C2 to allow Construct users to integrate our javascript framework without any need to learn any code.  More than that, we developed an Emulator that helps game designers to create and test games within the Gamee's Construct Plugins. The Emulator is not connected to any backend. It should work as a replica of the web platform.
 
-The Emulator Tool is only published on our website, you can use it from [here](https://emulator.gameeapp.com)
+The Emulator Tool is only published in our website, you can use it from [here](https://emulator.gameeapp.com)
 
 # Table of contents
 
@@ -92,17 +92,17 @@ You can download the C3 and C2 plugins from here :
 
 ## Properties
 
-| Name         | Description                                                             |
-| ------------ | ----------------------------------------------------------------------- |
-| Coins        | Enable in-game-purchase using Gamee Coins                               |
-| Ghost mode   | Enable the Ghost mode were you see other players movement when you play |
-| Log events   | Enable events logging                                                   |
-| Player data  | Enable loading a player data from Gamee's servers                       |
-| Replay       | Enable the Replay mode for your games                                   |
-| Rewarded ads | Enable ads in the game                                                  |
-| Save state   | Enable getting and setting states                                       |
-| Share        | Enable sharing your score without other players                         |
-| Social data  | Enable getting other players data                                       |
+| Name         | Description                                                                |
+| ------------ | ---------------------------------------------------------------------------|
+| Coins        | Enable in-game-purchase using Gamee Coins                                  |
+| Ghost mode   | Enable the Ghost mode where you see other players' movements when you play |
+| Log events   | Enable events logging                                                      |
+| Player data  | Enable loading a player data from Gamees' servers                          |
+| Replay       | Enable the Replay mode for your games                                      |
+| Rewarded ads | Enable ads in the game                                                     |
+| Save state   | Enable getting and setting states                                          |
+| Share        | Enable sharing your score with other players                               |
+| Social data  | Enable getting other players data                                          |
 
 ## Conditions
 
@@ -111,19 +111,19 @@ You can download the C3 and C2 plugins from here :
 | Name           | Description                                                                         |
 | -------------- | ----------------------------------------------------------------------------------- |
 | On Initialized | Will be triggered when the Handshake is done                                        |
-| On Start       | Will be triggered when the user will start game or restart it                       |
+| On Start       | Will be triggered when the user starts or restarts a game                           |
 | On Stop        | Will be triggered when the user pauses the game                                     |
 | On Resume      | Will be triggered when the user resumes the game after pause or GameeApp suspension |
 
 ### Ads
 
-| Name                              | Description                                                     |
-| --------------------------------- | --------------------------------------------------------------- |
-| On Loaded Rewarded Video          | Will be triggered when a rewarded video is available and loaded |
-| On Rewarded Video Watched         | Will be triggered when a player watched the rewarded video      |
-| On Rewarded Video Skipped/Ignored | Will be triggered when a player skip or ignore the reward video |
-| On No Rewarded Video available    | Will be triggered when a no rewarded video is available         |
-
+| Name                              | Description                                                               |
+| --------------------------------- | --------------------------------------------------------------------------|
+| On Loaded Rewarded Video          | Will be triggered when a rewarded video is available and loaded           |
+| On Rewarded Video Watched         | Will be triggered when a player finishes watching the rewarded video      |
+| On Rewarded Video Skipped/Ignored | Will be triggered when a player skip or ignore the rewarded video         |
+| On No Rewarded Video available    | Will be triggered when no rewarded videos are available                   |
+    
 ### Audio
 
 | Name      | Description                                                                                     |
@@ -135,15 +135,15 @@ You can download the C3 and C2 plugins from here :
 
 | Name     | Description                              |
 | -------- | ---------------------------------------- |
-| On Error | Will be triggered when an error occurred |
+| On Error | Will be triggered when an error occurs |
 
 ### Ghost
 
-| Name          | Description                                |
-| ------------- | ------------------------------------------ |
-| Is Ghost Mode | Will be triggered if ghost mode is active  |
-| On Ghost Show | Will be triggered when the ghost is shown  |
-| On Ghost Hide | Will be triggered when the ghost is hidden |
+| Name          | Description                                      |
+| ------------- | -------------------------------------------------|
+| Is Ghost Mode | Will be triggered when the ghost mode is active  |
+| On Ghost Show | Will be triggered when the ghost is shown        |
+| On Ghost Hide | Will be triggered when the ghost is hidden       |
 
 ### Player
 
@@ -158,20 +158,20 @@ You can download the C3 and C2 plugins from here :
 | Name                   | Description                                       |
 | ---------------------- | ------------------------------------------------- |
 | On Purchased Item      | Will be triggered when an Item has been purchased |
-| On Purchased Item Fail | Will be triggered when an Item purchase fail      |
+| On Purchased Item Fail | Will be triggered when an Item purchase fails     |
 
 ### Replay
 
-| Name           | Description                                |
-| -------------- | ------------------------------------------ |
-| Is Replay Mode | Will be triggered if Replay mode is active |
+| Name           | Description                                  |
+| -------------- | --------------------------------------------|
+| Is Replay Mode | Will be triggered when Replay mode is active |
 
 ### Social
 
 | Name                | Description                                     |
 | ------------------- | ----------------------------------------------- |
 | On Post Shared      | Will be triggered when a post is shared         |
-| On Post Shared fail | Will be triggered when a post sharing fail      |
+| On Post Shared fail | Will be triggered when a post sharing fails     |
 | On Request Social   | Will be triggered when a social request is made |
 
 ## Actions
@@ -181,7 +181,7 @@ You can download the C3 and C2 plugins from here :
 | Name                | Description                                                                                  |
 | ------------------- | -------------------------------------------------------------------------------------------- |
 | Game Initialization | Initial handshake action, game notifies Gamee platform about its existence                   |
-| Game Ready          | Should be called when game is ready to start. It signals game is able to recevie start event |
+| Game Ready          | Should be called when the game is ready to start. It signals the game that it is able to recevie the start event |
 | Game Over           | Notifies platform player ended the game                                                      |
 | Game Save           | Save data from the game, Requires the property **Save State** to be Enabled                  |
 | Update Score        | Updates the score making it visible for player                                               |
