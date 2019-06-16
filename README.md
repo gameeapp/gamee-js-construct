@@ -300,9 +300,9 @@ You must Enable the property **Log events**
 | gameeSocialData                     | Contains friends and player data (score, avatar, highScore, etc...)                                                    |
 | gameePlatform                       | Contains the platform the player is using, it could be **android**,**ios**,**web**,**mobile_web**                      |
 | gameeLocale                         | Contains the country and the language of the player, for example **\"**en_US**\"**,**\"**es_MX**\"**,**\"**pt_BZ**\"** |
-| gameeGameContext                    | contains the context of the game, it could be **normal** or **battle**                                                 |
+| gameeGameContext                    | Contains the context of the game, it could be **normal** or **battle**                                                 |
 | gameePlayerData                     | Received Json when a player accesses the game through a post made with the **Share** action                            |
 | gameeCountry **(2.3)**              | Contains player country in ISO 3166-1 alpha-2                                                                          |
-| gameePlayerMembershipType **(2.3)** | contains the membership type of the player, it could be "basic" or "vip"                                               |
+| gameePlayerMembershipType **(2.3)** | Contains the membership type of the player, it could be "basic" or "vip"                                               |
 | gameeGameContextId **(2.3)**        | Contains the game context ID                                                                                           |
 | gameeBattleData **(2.3)**           | Contains the game battle data                                                                                          |
