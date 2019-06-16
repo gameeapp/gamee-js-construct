@@ -12,6 +12,8 @@ The Emulator Tool is only published in our website, you can use it from [here](h
 
 # Table of contents
 
+- [Change Log](#change-log)
+  - [2.3](#2.3)
 - [Download](#download)
 - [Setup](#setup)
   - [Add plugins to the editors](#add-plugins-to-the-editors)
@@ -47,6 +49,18 @@ The Emulator Tool is only published in our website, you can use it from [here](h
     - Purchase Item
   - [Social](#social-1)
     - Share
+    - Request Battle Data **(2.3)**
+
+# Change Log
+
+## 2.3
+
+- Added Action "Request Battle Data"
+- Added Condition "On Request Battle Data"
+- Added Expression "gameeCountry"
+- Added Expression "gameePlayerMembershipType"
+- Added Expression "gameeGameContextId"
+- Added Expression "gameeBattleData"
 
 # Download
 
@@ -168,11 +182,12 @@ You can download the C3 and C2 plugins from here :
 
 ### Social
 
-| Name                | Description                                     |
-| ------------------- | ----------------------------------------------- |
-| On Post Shared      | Will be triggered when a post is shared         |
-| On Post Shared fail | Will be triggered when a post sharing fails     |
-| On Request Social   | Will be triggered when a social request is made |
+| Name                             | Description                                          |
+| -------------------------------- | ---------------------------------------------------- |
+| On Post Shared                   | Will be triggered when a post is shared              |
+| On Post Shared fail              | Will be triggered when a post sharing fails          |
+| On Request Social                | Will be triggered when a social request is made      |
+| On Request Battle Data **(2.3)** | Will be triggered when a battle data request is made |
 
 ## Actions
 
@@ -260,10 +275,11 @@ You must Enable the property **Log events**
 
 ### Social
 
-| Name           | Description                                                                                        |
-| -------------- | -------------------------------------------------------------------------------------------------- |
-| Share          | Shares a post on Feed or Battles. Requires the property **Share** to be Enabled                    |
-| Request Social | Will get more social data about Gamee players. Requires the property **Social Data** to be Enabled |
+| Name                          | Description                                                                                                |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| Share                         | Shares a post on Feed or Battles. Requires the property **Share** to be Enabled                            |
+| Request Social                | Will get more social data about Gamee players. Requires the property **Social Data** to be Enabled         |
+| Request Battle Data **(2.3)** | Will get data about a battle when the context is "battle". If the context is different, returns empty data |
 
 - Share
   - Mandatory
@@ -276,13 +292,17 @@ You must Enable the property **Log events**
 
 ## Expressions
 
-| Name               | Description                                                                                                            |
-| ------------------ | ---------------------------------------------------------------------------------------------------------------------- |
-| gameeSaveState     | Contains data you previously saved                                                                                     |
-| gameeReplayData    | Contains data to use on replay mode or ghost mode                                                                      |
-| gameeReplayVariant | Contains variante to use on replay mode or ghost mode                                                                  |
-| gameeSocialData    | Contains friends and player data (score, avatar, highScore, etc...)                                                    |
-| gameePlatform      | Contains the platform the player is using, it could be **android**,**ios**,**web**,**mobile_web**                      |
-| gameeLocale        | Contains the country and the language of the player, for example **\"**en_US**\"**,**\"**es_MX**\"**,**\"**pt_BZ**\"** |
-| gameeGameContext   | contains the context of the game, it could be **normal** or **battle**                                                 |
-| gameePlayerData    | Received Json when a player accesses the game through a post made with the **Share** action                            |
+| Name                                | Description                                                                                                            |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| gameeSaveState                      | Contains data you previously saved                                                                                     |
+| gameeReplayData                     | Contains data to use on replay mode or ghost mode                                                                      |
+| gameeReplayVariant                  | Contains variante to use on replay mode or ghost mode                                                                  |
+| gameeSocialData                     | Contains friends and player data (score, avatar, highScore, etc...)                                                    |
+| gameePlatform                       | Contains the platform the player is using, it could be **android**,**ios**,**web**,**mobile_web**                      |
+| gameeLocale                         | Contains the country and the language of the player, for example **\"**en_US**\"**,**\"**es_MX**\"**,**\"**pt_BZ**\"** |
+| gameeGameContext                    | contains the context of the game, it could be **normal** or **battle**                                                 |
+| gameePlayerData                     | Received Json when a player accesses the game through a post made with the **Share** action                            |
+| gameeCountry **(2.3)**              | Contains player country in ISO 3166-1 alpha-2                                                                          |
+| gameePlayerMembershipType **(2.3)** | contains the membership type of the player, it could be "basic" or "vip"                                               |
+| gameeGameContextId **(2.3)**        | Contains the game context ID                                                                                           |
+| gameeBattleData **(2.3)**           | Contains the game battle data                                                                                          |
