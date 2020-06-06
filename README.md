@@ -4,6 +4,10 @@ GAMEE is a social platform full of HTML5 games. Our main goal is to make the gam
 
 [GAMEE JS](https://github.com/gameeapp/gamee-js) is our Javascript framework for connecting HTML5 game to GAMEE platform.
 
+## IMPORTANT
+
+You have to Uncheck the **Use Worker** in the project's advanced settings in C3, otherwise the gamee-js script won't access the window DOM object which blocks all the gamee requests
+
 ## Construct Plugins
 
 We developed 2 plugins for C3 and C2 to allow Construct users to integrate our javascript framework without any need to learn any code. More than that, we developed an Emulator that helps game designers create and test games within the Gamee's Construct Plugins. The Emulator is not connected to any backend. It should work as a replica of the web platform.
@@ -13,6 +17,7 @@ The Emulator Tool is only published in our website, you can use it from [here](h
 # Table of contents
 
 - [Change Log](#change-log)
+  - [2.5](#2.5)
   - [2.3](#2.3)
 - [Download](#download)
 - [Setup](#setup)
@@ -31,7 +36,6 @@ The Emulator Tool is only published in our website, you can use it from [here](h
   - [Erros](#erros)
   - [Ghost](#ghost)
   - [Player](#player)
-  - [Purchase](#purchase)
   - [Replay](#replay)
   - [Social](#social)
 - [Actions](#actions)
@@ -39,19 +43,34 @@ The Emulator Tool is only published in our website, you can use it from [here](h
     - Game Over
     - Game Save
     - Update Score
+    - Update Mission Progress **(2.5)**
+    - Game Start **(2.5)**
   - [Ads](#ads-1)
   - [Log](#log)
     - Log Event
   - [Player](#player-1)
     - Request Player Replay
     - Request Player Save State
-  - [Purchase](#purchase-1)
-    - Purchase Item
   - [Social](#social-1)
-    - Share
     - Request Battle Data **(2.3)**
 
 # Change Log
+
+## 2.5
+
+- Removed Property "Coins"
+- Removed Property "Share"
+- Removed Condition "On Purchased Item"
+- Removed Condition "On Purchased Item Fail"
+- Removed Condition "On Post Shared"
+- Removed Condition "On Post Shared fail"
+- Removed Action "Purchase Item"
+- Removed Action "Share"
+
+- Added Condition "On Use Extra Life"
+- Added Action "Update Mission Progress"
+- Added Action "Game Start"
+- Added Expression "gameeMissionData"
 
 ## 2.3
 
@@ -106,28 +125,29 @@ You can download the C3 and C2 plugins from here :
 
 ## Properties
 
-| Name         | Description                                                                |
-| ------------ | -------------------------------------------------------------------------- |
-| Coins        | Enable in-game-purchase using Gamee Coins                                  |
-| Ghost mode   | Enable the Ghost mode where you see other players' movements when you play |
-| Log events   | Enable events logging                                                      |
-| Player data  | Enable loading a player data from Gamees' servers                          |
-| Replay       | Enable the Replay mode for your games                                      |
-| Rewarded ads | Enable ads in the game                                                     |
-| Save state   | Enable getting and setting states                                          |
-| Share        | Enable sharing your score with other players                               |
-| Social data  | Enable getting other players data                                          |
+| Name                 | Description                                                                |
+| -------------------- | -------------------------------------------------------------------------- |
+| Ghost mode           | Enable the Ghost mode where you see other players' movements when you play |
+| Log events           | Enable events logging                                                      |
+| Player data          | Enable loading a player data from Gamees' servers                          |
+| Replay               | Enable the Replay mode for your games                                      |
+| Rewarded ads         | Enable ads in the game                                                     |
+| Save state           | Enable getting and setting states                                          |
+| Social data          | Enable getting other players data                                          |
+| Extra Life **(2.5)** | Enable the get extra life condition                                        |
+| Missions **(2.5)**   | Enable getting mission data                                                |
 
 ## Conditions
 
 ### General
 
-| Name           | Description                                                                         |
-| -------------- | ----------------------------------------------------------------------------------- |
-| On Initialized | Will be triggered when the Handshake is done                                        |
-| On Start       | Will be triggered when the user starts or restarts a game                           |
-| On Stop        | Will be triggered when the user pauses the game                                     |
-| On Resume      | Will be triggered when the user resumes the game after pause or GameeApp suspension |
+| Name                        | Description                                                                         |
+| --------------------------- | ----------------------------------------------------------------------------------- |
+| On Initialized              | Will be triggered when the Handshake is done                                        |
+| On Start                    | Will be triggered when the user starts or restarts a game                           |
+| On Stop                     | Will be triggered when the user pauses the game                                     |
+| On Resume                   | Will be triggered when the user resumes the game after pause or GameeApp suspension |
+| On Use Extra Life **(2.5)** | Will be triggered when an extra life is in use.                                     |
 
 ### Ads
 
@@ -167,13 +187,6 @@ You can download the C3 and C2 plugins from here :
 | On Request Player Replay | Will be triggered when a player replay is requested     |
 | On Request Save State    | Will be triggered when a player save state is requested |
 
-### Purchase
-
-| Name                   | Description                                       |
-| ---------------------- | ------------------------------------------------- |
-| On Purchased Item      | Will be triggered when an Item has been purchased |
-| On Purchased Item Fail | Will be triggered when an Item purchase fails     |
-
 ### Replay
 
 | Name           | Description                                  |
@@ -184,8 +197,6 @@ You can download the C3 and C2 plugins from here :
 
 | Name                             | Description                                          |
 | -------------------------------- | ---------------------------------------------------- |
-| On Post Shared                   | Will be triggered when a post is shared              |
-| On Post Shared fail              | Will be triggered when a post sharing fails          |
 | On Request Social                | Will be triggered when a social request is made      |
 | On Request Battle Data **(2.3)** | Will be triggered when a battle data request is made |
 
@@ -193,13 +204,15 @@ You can download the C3 and C2 plugins from here :
 
 ### General
 
-| Name                | Description                                                                                                                 |
-| ------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| Game Initialization | Initial handshake action, game notifies Gamee platform about its existence                                                  |
-| Game Ready          | Should be called when the game is ready to start. It signals the Gamee plateform that it is able to recevie the start event |
-| Game Over           | Notifies the platform that the player ended the game                                                                        |
-| Game Save           | Saves data from the game. Requires the property **Save State** to be Enabled                                                |
-| Update Score        | Updates the score making it visible to the player                                                                           |
+| Name                              | Description                                                                                                                 |
+| --------------------------------- | --------------------------------------------------------------------------------------------------------------------------- |
+| Game Initialization               | Initial handshake action, game notifies Gamee platform about its existence                                                  |
+| Game Ready                        | Should be called when the game is ready to start. It signals the Gamee plateform that it is able to recevie the start event |
+| Game Over                         | Notifies the platform that the player ended the game                                                                        |
+| Game Save                         | Saves data from the game. Requires the property **Save State** to be Enabled                                                |
+| Update Score                      | Updates the score making it visible to the player                                                                           |
+| Update Mission Progress **(2.5)** | Updates the mission progress                                                                                                |
+| Game Start **(2.5)**              | Let the platform know that the gameplay has started                                                                         |
 
 - Game Over
 
@@ -215,10 +228,18 @@ You can download the C3 and C2 plugins from here :
     - **Share Score** When you save the Game State, you can set the Share Score option to True. It will trigger a screen asking the player to share the progress with his actual score. The game must be paused during this process. The game continues when it receives a resume message
 
 - Update Score
+
   - Mandatory
     - **Score** The Player score
   - Optional
     - **Ghost Sign** if it is set to true, it will update the Ghost Score, if the game is in Ghost mode
+
+- Update Mission Progress
+
+  - Mandatory
+    - **Mission Progress Value** The value of the mission progress between 0 - 100.
+
+- Game Start
 
 ### Ads
 
@@ -259,36 +280,12 @@ You must Enable the property **Log events**
   - Mandatory
     - **User ID** The unique ID of the player that you want to get their Save State
 
-### Purchase
-
-| Name          | Description                                                                                     |
-| ------------- | ----------------------------------------------------------------------------------------------- |
-| Purchase Item | Purchase items inside the game using GAMEE Coins. Requires the property **Coins** to be Enabled |
-
-- Purchase Item
-  - Mandatory
-    - **Coin Cost** The cost of the item
-    - **Item Name** The name of the item
-    - **Item Image** The Image of the item (base64Image)
-  - Optional
-    - **Developer Payload** Purchase data to be stored
-
 ### Social
 
 | Name                          | Description                                                                                                |
 | ----------------------------- | ---------------------------------------------------------------------------------------------------------- |
-| Share                         | Shares a post on Feed or Battles. Requires the property **Share** to be Enabled                            |
 | Request Social                | Will get more social data about Gamee players. Requires the property **Social Data** to be Enabled         |
 | Request Battle Data **(2.3)** | Will get data about a battle when the context is "battle". If the context is different, returns empty data |
-
-- Share
-  - Mandatory
-    - **Text** The message of the post
-    - **Destination** It will indicate where the post is going to be published, on Feed or Battle
-    - **Picture** Image for the post. The image should be in format 4:3 (640x480px), 1:1 (640x640), or 3:4 (640x852). Maximum size is 150 kB. (base64Image)
-  - Optional
-    - **Score** The score of the Player
-    - **Init Data** Data that will be shared with other players when they use the post.
 
 ## Expressions
 
@@ -306,3 +303,4 @@ You must Enable the property **Log events**
 | gameePlayerMembershipType **(2.3)** | Contains the membership type of the player, it could be "basic" or "vip"                                               |
 | gameeGameContextId **(2.3)**        | Contains the game context ID                                                                                           |
 | gameeBattleData **(2.3)**           | Contains the game battle data                                                                                          |
+| gameeMissionData **(2.5)**          | Contains the mission data                                                                                              |
